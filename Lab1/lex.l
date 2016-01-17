@@ -1,0 +1,21 @@
+%%
+"void"										return VOID;
+"int"										return INT;
+"float"										return FLOAT;
+((-?)[1-9][0-9]*)|(0[bB][01]*)|(0[0-7]*)|(0[xX][0-9a-fA-F]*)	return INT_CONSTANT;
+(-?)[[:digit:]]*(("."[[:digit:]]*)?)([eE]([+-]?)[0-9]*)?		return FLOAT_CONSTANT;
+"return"									return RETURN;
+"||"										return OR_OP;
+"&&"										return AND_OP;
+"=="										return EQ_OP;
+"!="										return NE_OP;
+"<="										return LE_OP;
+">="										return GE_OP;
+"++"										return INC_OP;
+"while"										return WHILE;
+"for"										return FOR;
+"if"										return IF;
+"else"										return ELSE;
+[A-Za-z_][:word:]*							return IDENTIFIER;
+\"(\\.|[^"])*\"								return STRING_LITERAL;
+.                                           return OTHERS;                                          
