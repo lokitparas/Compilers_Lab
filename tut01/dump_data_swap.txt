@@ -1,0 +1,87 @@
+
+swap.o:     file format mach-o-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <_swap>:
+   0:	55                   	push   %rbp
+   1:	48 89 e5             	mov    %rsp,%rbp
+   4:	48 83 ec 10          	sub    $0x10,%rsp
+   8:	b0 00                	mov    $0x0,%al
+   a:	e8 00 00 00 00       	callq  f <_swap+0xf>
+			b: BRANCH32	_f
+   f:	48 8b 0d 00 00 00 00 	mov    0x0(%rip),%rcx        # 16 <_swap+0x16>
+			12: GOT_LOAD	_bufp1
+  16:	48 8b 15 00 00 00 00 	mov    0x0(%rip),%rdx        # 1d <_swap+0x1d>
+			19: GOT_LOAD	_buf
+  1d:	48 81 c2 04 00 00 00 	add    $0x4,%rdx
+  24:	48 89 11             	mov    %rdx,(%rcx)
+  27:	48 8b 15 00 00 00 00 	mov    0x0(%rip),%rdx        # 2e <_swap+0x2e>
+			2a: DISP32	_bufp0
+  2e:	8b 32                	mov    (%rdx),%esi
+  30:	89 75 fc             	mov    %esi,-0x4(%rbp)
+  33:	48 8b 11             	mov    (%rcx),%rdx
+  36:	8b 32                	mov    (%rdx),%esi
+  38:	48 8b 15 00 00 00 00 	mov    0x0(%rip),%rdx        # 3f <_swap+0x3f>
+			3b: DISP32	_bufp0
+  3f:	89 32                	mov    %esi,(%rdx)
+  41:	8b 75 fc             	mov    -0x4(%rbp),%esi
+  44:	48 8b 09             	mov    (%rcx),%rcx
+  47:	89 31                	mov    %esi,(%rcx)
+  49:	89 45 f8             	mov    %eax,-0x8(%rbp)
+  4c:	48 83 c4 10          	add    $0x10,%rsp
+  50:	5d                   	pop    %rbp
+  51:	c3                   	retq   
+
+Disassembly of section .data:
+
+0000000000000058 <_bufp0>:
+	...
+			58: 64	_buf
+
+Disassembly of section __LD.__compact_unwind:
+
+0000000000000060 <__LD.__compact_unwind>:
+	...
+			60: 64	.text
+  68:	52                   	push   %rdx
+  69:	00 00                	add    %al,(%rax)
+  6b:	00 00                	add    %al,(%rax)
+  6d:	00 00                	add    %al,(%rax)
+  6f:	01 00                	add    %eax,(%rax)
+	...
+
+Disassembly of section .eh_frame:
+
+0000000000000080 <.eh_frame>:
+  80:	14 00                	adc    $0x0,%al
+  82:	00 00                	add    %al,(%rax)
+  84:	00 00                	add    %al,(%rax)
+  86:	00 00                	add    %al,(%rax)
+  88:	03 7a 52             	add    0x52(%rdx),%edi
+  8b:	00 01                	add    %al,(%rcx)
+  8d:	78 10                	js     9f <.eh_frame+0x1f>
+  8f:	01 10                	add    %edx,(%rax)
+  91:	0c 07                	or     $0x7,%al
+  93:	08 90 01 00 00 24    	or     %dl,0x24000001(%rax)
+  99:	00 00                	add    %al,(%rax)
+  9b:	00 1c 00             	add    %bl,(%rax,%rax,1)
+  9e:	00 00                	add    %al,(%rax)
+  a0:	60                   	(bad)  
+  a1:	ff                   	(bad)  
+  a2:	ff                   	(bad)  
+  a3:	ff                   	(bad)  
+  a4:	ff                   	(bad)  
+  a5:	ff                   	(bad)  
+  a6:	ff                   	(bad)  
+  a7:	ff 52 00             	callq  *0x0(%rdx)
+  aa:	00 00                	add    %al,(%rax)
+  ac:	00 00                	add    %al,(%rax)
+  ae:	00 00                	add    %al,(%rax)
+  b0:	00 41 0e             	add    %al,0xe(%rcx)
+  b3:	10 86 02 43 0d 06    	adc    %al,0x60d4302(%rsi)
+  b9:	00 00                	add    %al,(%rax)
+  bb:	00 00                	add    %al,(%rax)
+  bd:	00 00                	add    %al,(%rax)
+	...

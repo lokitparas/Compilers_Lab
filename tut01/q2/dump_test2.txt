@@ -1,0 +1,53 @@
+
+a.out:     file format mach-o-x86-64
+
+
+Disassembly of section .text:
+
+0000000100000f90 <_main>:
+   100000f90:	55                   	push   %rbp
+   100000f91:	48 89 e5             	mov    %rsp,%rbp
+   100000f94:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+   100000f9b:	c7 45 e0 00 00 00 00 	movl   $0x0,-0x20(%rbp)
+   100000fa2:	c7 45 e4 02 00 00 00 	movl   $0x2,-0x1c(%rbp)
+   100000fa9:	8b 45 e0             	mov    -0x20(%rbp),%eax
+   100000fac:	03 45 e4             	add    -0x1c(%rbp),%eax
+   100000faf:	89 45 e0             	mov    %eax,-0x20(%rbp)
+   100000fb2:	8b 45 e0             	mov    -0x20(%rbp),%eax
+   100000fb5:	5d                   	pop    %rbp
+   100000fb6:	c3                   	retq   
+
+Disassembly of section __TEXT.__unwind_info:
+
+0000000100000fb8 <__TEXT.__unwind_info>:
+   100000fb8:	01 00                	add    %eax,(%rax)
+   100000fba:	00 00                	add    %al,(%rax)
+   100000fbc:	1c 00                	sbb    $0x0,%al
+   100000fbe:	00 00                	add    %al,(%rax)
+   100000fc0:	00 00                	add    %al,(%rax)
+   100000fc2:	00 00                	add    %al,(%rax)
+   100000fc4:	1c 00                	sbb    $0x0,%al
+   100000fc6:	00 00                	add    %al,(%rax)
+   100000fc8:	00 00                	add    %al,(%rax)
+   100000fca:	00 00                	add    %al,(%rax)
+   100000fcc:	1c 00                	sbb    $0x0,%al
+   100000fce:	00 00                	add    %al,(%rax)
+   100000fd0:	02 00                	add    (%rax),%al
+   100000fd2:	00 00                	add    %al,(%rax)
+   100000fd4:	90                   	nop
+   100000fd5:	0f 00 00             	sldt   (%rax)
+   100000fd8:	34 00                	xor    $0x0,%al
+   100000fda:	00 00                	add    %al,(%rax)
+   100000fdc:	34 00                	xor    $0x0,%al
+   100000fde:	00 00                	add    %al,(%rax)
+   100000fe0:	b8 0f 00 00 00       	mov    $0xf,%eax
+   100000fe5:	00 00                	add    %al,(%rax)
+   100000fe7:	00 34 00             	add    %dh,(%rax,%rax,1)
+   100000fea:	00 00                	add    %al,(%rax)
+   100000fec:	03 00                	add    (%rax),%eax
+   100000fee:	00 00                	add    %al,(%rax)
+   100000ff0:	0c 00                	or     $0x0,%al
+   100000ff2:	01 00                	add    %eax,(%rax)
+   100000ff4:	10 00                	adc    %al,(%rax)
+   100000ff6:	01 00                	add    %eax,(%rax)
+	...

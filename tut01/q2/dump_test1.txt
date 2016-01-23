@@ -1,0 +1,61 @@
+
+a.out:     file format mach-o-x86-64
+
+
+Disassembly of section .text:
+
+0000000100000f70 <_main>:
+   100000f70:	55                   	push   %rbp
+   100000f71:	48 89 e5             	mov    %rsp,%rbp
+   100000f74:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+   100000f7b:	c7 45 f8 01 00 00 00 	movl   $0x1,-0x8(%rbp)
+   100000f82:	c7 45 f4 01 00 00 00 	movl   $0x1,-0xc(%rbp)
+   100000f89:	81 7d f8 0a 00 00 00 	cmpl   $0xa,-0x8(%rbp)
+   100000f90:	0f 8f 1a 00 00 00    	jg     100000fb0 <_main+0x40>
+   100000f96:	8b 45 f4             	mov    -0xc(%rbp),%eax
+   100000f99:	0f af 45 f8          	imul   -0x8(%rbp),%eax
+   100000f9d:	89 45 f4             	mov    %eax,-0xc(%rbp)
+   100000fa0:	8b 45 f8             	mov    -0x8(%rbp),%eax
+   100000fa3:	05 01 00 00 00       	add    $0x1,%eax
+   100000fa8:	89 45 f8             	mov    %eax,-0x8(%rbp)
+   100000fab:	e9 d9 ff ff ff       	jmpq   100000f89 <_main+0x19>
+   100000fb0:	8b 45 f4             	mov    -0xc(%rbp),%eax
+   100000fb3:	5d                   	pop    %rbp
+   100000fb4:	c3                   	retq   
+
+Disassembly of section __TEXT.__unwind_info:
+
+0000000100000fb8 <__TEXT.__unwind_info>:
+   100000fb8:	01 00                	add    %eax,(%rax)
+   100000fba:	00 00                	add    %al,(%rax)
+   100000fbc:	1c 00                	sbb    $0x0,%al
+   100000fbe:	00 00                	add    %al,(%rax)
+   100000fc0:	00 00                	add    %al,(%rax)
+   100000fc2:	00 00                	add    %al,(%rax)
+   100000fc4:	1c 00                	sbb    $0x0,%al
+   100000fc6:	00 00                	add    %al,(%rax)
+   100000fc8:	00 00                	add    %al,(%rax)
+   100000fca:	00 00                	add    %al,(%rax)
+   100000fcc:	1c 00                	sbb    $0x0,%al
+   100000fce:	00 00                	add    %al,(%rax)
+   100000fd0:	02 00                	add    (%rax),%al
+   100000fd2:	00 00                	add    %al,(%rax)
+   100000fd4:	70 0f                	jo     100000fe5 <_main+0x75>
+   100000fd6:	00 00                	add    %al,(%rax)
+   100000fd8:	34 00                	xor    $0x0,%al
+   100000fda:	00 00                	add    %al,(%rax)
+   100000fdc:	34 00                	xor    $0x0,%al
+   100000fde:	00 00                	add    %al,(%rax)
+   100000fe0:	b6 0f                	mov    $0xf,%dh
+   100000fe2:	00 00                	add    %al,(%rax)
+   100000fe4:	00 00                	add    %al,(%rax)
+   100000fe6:	00 00                	add    %al,(%rax)
+   100000fe8:	34 00                	xor    $0x0,%al
+   100000fea:	00 00                	add    %al,(%rax)
+   100000fec:	03 00                	add    (%rax),%eax
+   100000fee:	00 00                	add    %al,(%rax)
+   100000ff0:	0c 00                	or     $0x0,%al
+   100000ff2:	01 00                	add    %eax,(%rax)
+   100000ff4:	10 00                	adc    %al,(%rax)
+   100000ff6:	01 00                	add    %eax,(%rax)
+	...

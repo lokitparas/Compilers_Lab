@@ -1,0 +1,212 @@
+
+a.out:     file format mach-o-x86-64
+
+
+Disassembly of section .text:
+
+0000000100000e70 <_main>:
+   100000e70:	55                   	push   %rbp
+   100000e71:	48 89 e5             	mov    %rsp,%rbp
+   100000e74:	48 83 ec 10          	sub    $0x10,%rsp
+   100000e78:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+   100000e7f:	b0 00                	mov    $0x0,%al
+   100000e81:	e8 2a 00 00 00       	callq  100000eb0 <_swap>
+   100000e86:	48 8d 3d bd 00 00 00 	lea    0xbd(%rip),%rdi        # 100000f4a <_f+0x3a>
+   100000e8d:	8b 35 85 01 00 00    	mov    0x185(%rip),%esi        # 100001018 <_buf>
+   100000e93:	8b 15 83 01 00 00    	mov    0x183(%rip),%edx        # 10000101c <_buf+0x4>
+   100000e99:	b0 00                	mov    $0x0,%al
+   100000e9b:	e8 8a 00 00 00       	callq  100000f2a <_f+0x1a>
+   100000ea0:	31 d2                	xor    %edx,%edx
+   100000ea2:	89 45 f8             	mov    %eax,-0x8(%rbp)
+   100000ea5:	89 d0                	mov    %edx,%eax
+   100000ea7:	48 83 c4 10          	add    $0x10,%rsp
+   100000eab:	5d                   	pop    %rbp
+   100000eac:	c3                   	retq   
+   100000ead:	90                   	nop
+   100000eae:	90                   	nop
+   100000eaf:	90                   	nop
+
+0000000100000eb0 <_swap>:
+   100000eb0:	55                   	push   %rbp
+   100000eb1:	48 89 e5             	mov    %rsp,%rbp
+   100000eb4:	48 83 ec 10          	sub    $0x10,%rsp
+   100000eb8:	b0 00                	mov    $0x0,%al
+   100000eba:	e8 51 00 00 00       	callq  100000f10 <_f>
+   100000ebf:	48 8d 0d 62 01 00 00 	lea    0x162(%rip),%rcx        # 100001028 <_bufp1>
+   100000ec6:	48 8d 15 4b 01 00 00 	lea    0x14b(%rip),%rdx        # 100001018 <_buf>
+   100000ecd:	48 81 c2 04 00 00 00 	add    $0x4,%rdx
+   100000ed4:	48 89 11             	mov    %rdx,(%rcx)
+   100000ed7:	48 8b 15 42 01 00 00 	mov    0x142(%rip),%rdx        # 100001020 <_bufp0>
+   100000ede:	8b 32                	mov    (%rdx),%esi
+   100000ee0:	89 75 fc             	mov    %esi,-0x4(%rbp)
+   100000ee3:	48 8b 11             	mov    (%rcx),%rdx
+   100000ee6:	8b 32                	mov    (%rdx),%esi
+   100000ee8:	48 8b 15 31 01 00 00 	mov    0x131(%rip),%rdx        # 100001020 <_bufp0>
+   100000eef:	89 32                	mov    %esi,(%rdx)
+   100000ef1:	8b 75 fc             	mov    -0x4(%rbp),%esi
+   100000ef4:	48 8b 09             	mov    (%rcx),%rcx
+   100000ef7:	89 31                	mov    %esi,(%rcx)
+   100000ef9:	89 45 f8             	mov    %eax,-0x8(%rbp)
+   100000efc:	48 83 c4 10          	add    $0x10,%rsp
+   100000f00:	5d                   	pop    %rbp
+   100000f01:	c3                   	retq   
+   100000f02:	90                   	nop
+   100000f03:	90                   	nop
+   100000f04:	90                   	nop
+   100000f05:	90                   	nop
+   100000f06:	90                   	nop
+   100000f07:	90                   	nop
+   100000f08:	90                   	nop
+   100000f09:	90                   	nop
+   100000f0a:	90                   	nop
+   100000f0b:	90                   	nop
+   100000f0c:	90                   	nop
+   100000f0d:	90                   	nop
+   100000f0e:	90                   	nop
+   100000f0f:	90                   	nop
+
+0000000100000f10 <_f>:
+   100000f10:	55                   	push   %rbp
+   100000f11:	48 89 e5             	mov    %rsp,%rbp
+   100000f14:	48 8d 05 fd 00 00 00 	lea    0xfd(%rip),%rax        # 100001018 <_buf>
+   100000f1b:	c7 00 03 00 00 00    	movl   $0x3,(%rax)
+   100000f21:	c7 40 04 04 00 00 00 	movl   $0x4,0x4(%rax)
+   100000f28:	5d                   	pop    %rbp
+   100000f29:	c3                   	retq   
+
+Disassembly of section __TEXT.__stubs:
+
+0000000100000f2a <__TEXT.__stubs>:
+   100000f2a:	ff 25 e0 00 00 00    	jmpq   *0xe0(%rip)        # 100001010 <_f+0x100>
+
+Disassembly of section __TEXT.__stub_helper:
+
+0000000100000f30 <__TEXT.__stub_helper>:
+   100000f30:	4c 8d 1d d1 00 00 00 	lea    0xd1(%rip),%r11        # 100001008 <_f+0xf8>
+   100000f37:	41 53                	push   %r11
+   100000f39:	ff 25 c1 00 00 00    	jmpq   *0xc1(%rip)        # 100001000 <_f+0xf0>
+   100000f3f:	90                   	nop
+   100000f40:	68 00 00 00 00       	pushq  $0x0
+   100000f45:	e9 e6 ff ff ff       	jmpq   100000f30 <_f+0x20>
+
+Disassembly of section .cstring:
+
+0000000100000f4a <.cstring>:
+   100000f4a:	62                   	(bad)  
+   100000f4b:	75 66                	jne    100000fb3 <_f+0xa3>
+   100000f4d:	5b                   	pop    %rbx
+   100000f4e:	30 5d 3d             	xor    %bl,0x3d(%rbp)
+   100000f51:	20 25 64 20 62 75    	and    %ah,0x75622064(%rip)        # 175622fbb <_bufp1+0x75621f93>
+   100000f57:	66 5b                	pop    %bx
+   100000f59:	31 5d 3d             	xor    %ebx,0x3d(%rbp)
+   100000f5c:	20                   	.byte 0x20
+   100000f5d:	25                   	.byte 0x25
+   100000f5e:	64 0a 00             	or     %fs:(%rax),%al
+
+Disassembly of section __TEXT.__unwind_info:
+
+0000000100000f64 <__TEXT.__unwind_info>:
+   100000f64:	01 00                	add    %eax,(%rax)
+   100000f66:	00 00                	add    %al,(%rax)
+   100000f68:	1c 00                	sbb    $0x0,%al
+   100000f6a:	00 00                	add    %al,(%rax)
+   100000f6c:	00 00                	add    %al,(%rax)
+   100000f6e:	00 00                	add    %al,(%rax)
+   100000f70:	1c 00                	sbb    $0x0,%al
+   100000f72:	00 00                	add    %al,(%rax)
+   100000f74:	00 00                	add    %al,(%rax)
+   100000f76:	00 00                	add    %al,(%rax)
+   100000f78:	1c 00                	sbb    $0x0,%al
+   100000f7a:	00 00                	add    %al,(%rax)
+   100000f7c:	02 00                	add    (%rax),%al
+   100000f7e:	00 00                	add    %al,(%rax)
+   100000f80:	70 0e                	jo     100000f90 <_f+0x80>
+   100000f82:	00 00                	add    %al,(%rax)
+   100000f84:	34 00                	xor    $0x0,%al
+   100000f86:	00 00                	add    %al,(%rax)
+   100000f88:	34 00                	xor    $0x0,%al
+   100000f8a:	00 00                	add    %al,(%rax)
+   100000f8c:	2b 0f                	sub    (%rdi),%ecx
+   100000f8e:	00 00                	add    %al,(%rax)
+   100000f90:	00 00                	add    %al,(%rax)
+   100000f92:	00 00                	add    %al,(%rax)
+   100000f94:	34 00                	xor    $0x0,%al
+   100000f96:	00 00                	add    %al,(%rax)
+   100000f98:	03 00                	add    (%rax),%eax
+   100000f9a:	00 00                	add    %al,(%rax)
+   100000f9c:	0c 00                	or     $0x0,%al
+   100000f9e:	01 00                	add    %eax,(%rax)
+   100000fa0:	10 00                	adc    %al,(%rax)
+   100000fa2:	01 00                	add    %eax,(%rax)
+   100000fa4:	00 00                	add    %al,(%rax)
+   100000fa6:	00 00                	add    %al,(%rax)
+   100000fa8:	00 00                	add    %al,(%rax)
+   100000faa:	00 01                	add    %al,(%rcx)
+
+Disassembly of section .eh_frame:
+
+0000000100000fb0 <.eh_frame>:
+   100000fb0:	14 00                	adc    $0x0,%al
+   100000fb2:	00 00                	add    %al,(%rax)
+   100000fb4:	00 00                	add    %al,(%rax)
+   100000fb6:	00 00                	add    %al,(%rax)
+   100000fb8:	03 7a 52             	add    0x52(%rdx),%edi
+   100000fbb:	00 01                	add    %al,(%rcx)
+   100000fbd:	78 10                	js     100000fcf <_f+0xbf>
+   100000fbf:	01 10                	add    %edx,(%rax)
+   100000fc1:	0c 07                	or     $0x7,%al
+   100000fc3:	08 90 01 00 00 14    	or     %dl,0x14000001(%rax)
+   100000fc9:	00 00                	add    %al,(%rax)
+   100000fcb:	00 00                	add    %al,(%rax)
+   100000fcd:	00 00                	add    %al,(%rax)
+   100000fcf:	00 03                	add    %al,(%rbx)
+   100000fd1:	7a 52                	jp     100001025 <_bufp0+0x5>
+   100000fd3:	00 01                	add    %al,(%rcx)
+   100000fd5:	78 10                	js     100000fe7 <_f+0xd7>
+   100000fd7:	01 10                	add    %edx,(%rax)
+   100000fd9:	0c 07                	or     $0x7,%al
+   100000fdb:	08 90 01 00 00 14    	or     %dl,0x14000001(%rax)
+   100000fe1:	00 00                	add    %al,(%rax)
+   100000fe3:	00 00                	add    %al,(%rax)
+   100000fe5:	00 00                	add    %al,(%rax)
+   100000fe7:	00 03                	add    %al,(%rbx)
+   100000fe9:	7a 52                	jp     10000103d <_bufp1+0x15>
+   100000feb:	00 01                	add    %al,(%rcx)
+   100000fed:	78 10                	js     100000fff <_f+0xef>
+   100000fef:	01 10                	add    %edx,(%rax)
+   100000ff1:	0c 07                	or     $0x7,%al
+   100000ff3:	08                   	.byte 0x8
+   100000ff4:	90                   	nop
+   100000ff5:	01 00                	add    %eax,(%rax)
+	...
+
+Disassembly of section __DATA.__nl_symbol_ptr:
+
+0000000100001000 <__DATA.__nl_symbol_ptr>:
+	...
+
+Disassembly of section __DATA.__la_symbol_ptr:
+
+0000000100001010 <__DATA.__la_symbol_ptr>:
+   100001010:	40 0f 00 00          	rex sldt (%rax)
+   100001014:	01 00                	add    %eax,(%rax)
+	...
+
+Disassembly of section .data:
+
+0000000100001018 <_buf>:
+   100001018:	22 00                	and    (%rax),%al
+   10000101a:	00 00                	add    %al,(%rax)
+   10000101c:	38 00                	cmp    %al,(%rax)
+	...
+
+0000000100001020 <_bufp0>:
+   100001020:	18 10                	sbb    %dl,(%rax)
+   100001022:	00 00                	add    %al,(%rax)
+   100001024:	01 00                	add    %eax,(%rax)
+	...
+
+Disassembly of section __DATA.__common:
+
+0000000100001028 <_bufp1>:
+	...

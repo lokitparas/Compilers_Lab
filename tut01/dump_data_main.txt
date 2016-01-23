@@ -1,0 +1,95 @@
+
+main.o:     file format mach-o-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <_main>:
+   0:	55                   	push   %rbp
+   1:	48 89 e5             	mov    %rsp,%rbp
+   4:	48 83 ec 10          	sub    $0x10,%rsp
+   8:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+   f:	b0 00                	mov    $0x0,%al
+  11:	e8 00 00 00 00       	callq  16 <_main+0x16>
+			12: BRANCH32	_swap
+  16:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 1d <_main+0x1d>
+			19: DISP32	L_.str
+  1d:	8b 35 00 00 00 00    	mov    0x0(%rip),%esi        # 23 <_main+0x23>
+			1f: DISP32	_buf
+  23:	8b 15 04 00 00 00    	mov    0x4(%rip),%edx        # 2d <_main+0x2d>
+			25: DISP32	_buf
+  29:	b0 00                	mov    $0x0,%al
+  2b:	e8 00 00 00 00       	callq  30 <_main+0x30>
+			2c: BRANCH32	_printf
+  30:	31 d2                	xor    %edx,%edx
+  32:	89 45 f8             	mov    %eax,-0x8(%rbp)
+  35:	89 d0                	mov    %edx,%eax
+  37:	48 83 c4 10          	add    $0x10,%rsp
+  3b:	5d                   	pop    %rbp
+  3c:	c3                   	retq   
+
+Disassembly of section .data:
+
+0000000000000040 <_buf>:
+  40:	22 00                	and    (%rax),%al
+  42:	00 00                	add    %al,(%rax)
+  44:	38 00                	cmp    %al,(%rax)
+	...
+
+Disassembly of section .cstring:
+
+0000000000000048 <L_.str>:
+  48:	62                   	(bad)  
+  49:	75 66                	jne    b1 <L_.str+0x69>
+  4b:	5b                   	pop    %rbx
+  4c:	30 5d 3d             	xor    %bl,0x3d(%rbp)
+  4f:	20 25 64 20 62 75    	and    %ah,0x75622064(%rip)        # 756220b9 <L_.str+0x75622071>
+  55:	66 5b                	pop    %bx
+  57:	31 5d 3d             	xor    %ebx,0x3d(%rbp)
+  5a:	20                   	.byte 0x20
+  5b:	25                   	.byte 0x25
+  5c:	64 0a 00             	or     %fs:(%rax),%al
+
+Disassembly of section __LD.__compact_unwind:
+
+0000000000000060 <__LD.__compact_unwind>:
+	...
+			60: 64	.text
+  68:	3d 00 00 00 00       	cmp    $0x0,%eax
+  6d:	00 00                	add    %al,(%rax)
+  6f:	01 00                	add    %eax,(%rax)
+	...
+
+Disassembly of section .eh_frame:
+
+0000000000000080 <.eh_frame>:
+  80:	14 00                	adc    $0x0,%al
+  82:	00 00                	add    %al,(%rax)
+  84:	00 00                	add    %al,(%rax)
+  86:	00 00                	add    %al,(%rax)
+  88:	03 7a 52             	add    0x52(%rdx),%edi
+  8b:	00 01                	add    %al,(%rcx)
+  8d:	78 10                	js     9f <.eh_frame+0x1f>
+  8f:	01 10                	add    %edx,(%rax)
+  91:	0c 07                	or     $0x7,%al
+  93:	08 90 01 00 00 24    	or     %dl,0x24000001(%rax)
+  99:	00 00                	add    %al,(%rax)
+  9b:	00 1c 00             	add    %bl,(%rax,%rax,1)
+  9e:	00 00                	add    %al,(%rax)
+  a0:	60                   	(bad)  
+  a1:	ff                   	(bad)  
+  a2:	ff                   	(bad)  
+  a3:	ff                   	(bad)  
+  a4:	ff                   	(bad)  
+  a5:	ff                   	(bad)  
+  a6:	ff                   	(bad)  
+  a7:	ff                   	(bad)  
+  a8:	3d 00 00 00 00       	cmp    $0x0,%eax
+  ad:	00 00                	add    %al,(%rax)
+  af:	00 00                	add    %al,(%rax)
+  b1:	41 0e                	rex.B (bad) 
+  b3:	10 86 02 43 0d 06    	adc    %al,0x60d4302(%rsi)
+  b9:	00 00                	add    %al,(%rax)
+  bb:	00 00                	add    %al,(%rax)
+  bd:	00 00                	add    %al,(%rax)
+	...
