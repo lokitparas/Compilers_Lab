@@ -34,6 +34,6 @@
 "/"											return '/';
 "*"											return '*';
 "-"											return '-';
-\"(\\.|[^"])*\"								return Parser::STRING_LITERAL;
+\"(\\[\\\"tn]|[^"\\])*\"								return Parser::STRING_LITERAL;
 "/*"[^\*]*(\*([^\*\/][^\*]*)?)*"*/"			//skip
 .                                           return Parser::OTHERS;                                          
