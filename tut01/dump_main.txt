@@ -1,0 +1,29 @@
+
+main.o:     file format mach-o-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <_main>:
+   0:	55                   	push   %rbp
+   1:	48 89 e5             	mov    %rsp,%rbp
+   4:	48 83 ec 10          	sub    $0x10,%rsp
+   8:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+   f:	b0 00                	mov    $0x0,%al
+  11:	e8 00 00 00 00       	callq  16 <_main+0x16>
+			12: BRANCH32	_swap
+  16:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 1d <_main+0x1d>
+			19: DISP32	L_.str
+  1d:	8b 35 00 00 00 00    	mov    0x0(%rip),%esi        # 23 <_main+0x23>
+			1f: DISP32	_buf
+  23:	8b 15 04 00 00 00    	mov    0x4(%rip),%edx        # 2d <_main+0x2d>
+			25: DISP32	_buf
+  29:	b0 00                	mov    $0x0,%al
+  2b:	e8 00 00 00 00       	callq  30 <_main+0x30>
+			2c: BRANCH32	_printf
+  30:	31 d2                	xor    %edx,%edx
+  32:	89 45 f8             	mov    %eax,-0x8(%rbp)
+  35:	89 d0                	mov    %edx,%eax
+  37:	48 83 c4 10          	add    $0x10,%rsp
+  3b:	5d                   	pop    %rbp
+  3c:	c3                   	retq   
