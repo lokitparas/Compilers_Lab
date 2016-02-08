@@ -1,0 +1,350 @@
+In file included from ast.cpp:1:0,
+                 from parse.cc:5:
+ast.h:5:7: error: redefinition of ‘class abstract_astnode’
+ class abstract_astnode
+       ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:5:7: error: previous definition of ‘class abstract_astnode’
+ class abstract_astnode
+       ^
+In file included from ast.cpp:1:0,
+                 from parse.cc:5:
+ast.h:16:7: error: redefinition of ‘class stmt_ast’
+ class stmt_ast:public abstract_astnode{
+       ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:16:7: error: previous definition of ‘class stmt_ast’
+ class stmt_ast:public abstract_astnode{
+       ^
+In file included from ast.cpp:1:0,
+                 from parse.cc:5:
+ast.h:23:7: error: redefinition of ‘class exp_ast’
+ class exp_ast:public abstract_astnode{
+       ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:23:7: error: previous definition of ‘class exp_ast’
+ class exp_ast:public abstract_astnode{
+       ^
+In file included from ast.cpp:1:0,
+                 from parse.cc:5:
+ast.h:30:7: error: redefinition of ‘class ass’
+ class ass:public stmt_ast{
+       ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:30:7: error: previous definition of ‘class ass’
+ class ass:public stmt_ast{
+       ^
+In file included from ast.cpp:1:0,
+                 from parse.cc:5:
+ast.h:38:7: error: redefinition of ‘class seq’
+ class seq:public stmt_ast{
+       ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:38:7: error: previous definition of ‘class seq’
+ class seq:public stmt_ast{
+       ^
+In file included from ast.cpp:1:0,
+                 from parse.cc:5:
+ast.h:47:7: error: redefinition of ‘class empty’
+ class empty:public stmt_ast{
+       ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:47:7: error: previous definition of ‘class empty’
+ class empty:public stmt_ast{
+       ^
+In file included from ast.cpp:1:0,
+                 from parse.cc:5:
+ast.h:53:7: error: redefinition of ‘class Return’
+ class Return:public stmt_ast{
+       ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:53:7: error: previous definition of ‘class Return’
+ class Return:public stmt_ast{
+       ^
+In file included from ast.cpp:1:0,
+                 from parse.cc:5:
+ast.h:61:7: error: redefinition of ‘class For’
+ class For:public stmt_ast{
+       ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:61:7: error: previous definition of ‘class For’
+ class For:public stmt_ast{
+       ^
+In file included from ast.cpp:1:0,
+                 from parse.cc:5:
+ast.h:70:7: error: redefinition of ‘class While’
+ class While:public stmt_ast{
+       ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:70:7: error: previous definition of ‘class While’
+ class While:public stmt_ast{
+       ^
+In file included from ast.cpp:1:0,
+                 from parse.cc:5:
+ast.h:79:7: error: redefinition of ‘class If’
+ class If:public stmt_ast{
+       ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:79:7: error: previous definition of ‘class If’
+ class If:public stmt_ast{
+       ^
+In file included from ast.cpp:1:0,
+                 from parse.cc:5:
+ast.h:90:7: error: redefinition of ‘class oper2’
+ class oper2{
+       ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:90:7: error: previous definition of ‘class oper2’
+ class oper2{
+       ^
+In file included from ast.cpp:1:0,
+                 from parse.cc:5:
+ast.h:97:7: error: redefinition of ‘class oper1’
+ class oper1{
+       ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:97:7: error: previous definition of ‘class oper1’
+ class oper1{
+       ^
+In file included from ast.cpp:1:0,
+                 from parse.cc:5:
+ast.h:106:7: error: redefinition of ‘class op2’
+ class op2:public exp_ast{
+       ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:106:7: error: previous definition of ‘class op2’
+ class op2:public exp_ast{
+       ^
+In file included from ast.cpp:1:0,
+                 from parse.cc:5:
+ast.h:114:7: error: redefinition of ‘class op1’
+ class op1:public exp_ast{
+       ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:114:7: error: previous definition of ‘class op1’
+ class op1:public exp_ast{
+       ^
+In file included from ast.cpp:1:0,
+                 from parse.cc:5:
+ast.h:122:7: error: redefinition of ‘class func’
+ class func:public exp_ast{
+       ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:122:7: error: previous definition of ‘class func’
+ class func:public exp_ast{
+       ^
+In file included from ast.cpp:1:0,
+                 from parse.cc:5:
+ast.h:130:7: error: redefinition of ‘class float_const’
+ class float_const:public exp_ast{
+       ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:130:7: error: previous definition of ‘class float_const’
+ class float_const:public exp_ast{
+       ^
+In file included from ast.cpp:1:0,
+                 from parse.cc:5:
+ast.h:137:7: error: redefinition of ‘class int_const’
+ class int_const:public exp_ast{
+       ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:137:7: error: previous definition of ‘class int_const’
+ class int_const:public exp_ast{
+       ^
+In file included from ast.cpp:1:0,
+                 from parse.cc:5:
+ast.h:144:7: error: redefinition of ‘class string_const’
+ class string_const:public exp_ast{
+       ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:144:7: error: previous definition of ‘class string_const’
+ class string_const:public exp_ast{
+       ^
+In file included from ast.cpp:1:0,
+                 from parse.cc:5:
+ast.h:151:7: error: redefinition of ‘class ref_ast’
+ class ref_ast:public exp_ast{
+       ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:151:7: error: previous definition of ‘class ref_ast’
+ class ref_ast:public exp_ast{
+       ^
+In file included from ast.cpp:1:0,
+                 from parse.cc:5:
+ast.h:157:7: error: redefinition of ‘class identifier’
+ class identifier:public ref_ast{
+       ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:157:7: error: previous definition of ‘class identifier’
+ class identifier:public ref_ast{
+       ^
+In file included from ast.cpp:1:0,
+                 from parse.cc:5:
+ast.h:165:7: error: redefinition of ‘class pointer’
+ class pointer:public ref_ast{
+       ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:165:7: error: previous definition of ‘class pointer’
+ class pointer:public ref_ast{
+       ^
+In file included from ast.cpp:1:0,
+                 from parse.cc:5:
+ast.h:173:7: error: redefinition of ‘class deref’
+ class deref:public ref_ast{
+       ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:173:7: error: previous definition of ‘class deref’
+ class deref:public ref_ast{
+       ^
+In file included from ast.cpp:1:0,
+                 from parse.cc:5:
+ast.h:181:7: error: redefinition of ‘class array_ref’
+ class array_ref:public ref_ast{
+       ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:181:7: error: previous definition of ‘class array_ref’
+ class array_ref:public ref_ast{
+       ^
+In file included from parse.cc:5:0:
+ast.cpp: In member function ‘virtual void ass::print()’:
+ast.cpp:20:16: error: cannot call member function ‘virtual void empty::print()’ without object
+   empty::print();
+                ^
+ast.cpp: In constructor ‘seq::seq()’:
+ast.cpp:32:24: error: expected primary-expression before ‘v’
+  vec=vector<stmt_ast*> v;
+                        ^
+ast.cpp:32:24: error: expected ‘;’ before ‘v’
+ast.cpp: At global scope:
+ast.cpp:55:15: error: ISO C++ forbids declaration of ‘print’ with no type [-fpermissive]
+ Return::print(){
+               ^
+ast.cpp:55:1: error: prototype for ‘int Return::print()’ does not match any in class ‘Return’
+ Return::print(){
+ ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:58:7: error: candidate is: virtual void Return::print()
+  void print();
+       ^
+In file included from parse.cc:5:0:
+ast.cpp: In constructor ‘While::While()’:
+ast.cpp:80:7: error: cannot convert ‘stmt_ast*’ to ‘exp_ast*’ in assignment
+  left = right = NULL;
+       ^
+ast.cpp: At global scope:
+ast.cpp:88:14: error: ISO C++ forbids declaration of ‘print’ with no type [-fpermissive]
+ While::print(){
+              ^
+ast.cpp:88:1: error: prototype for ‘int While::print()’ does not match any in class ‘While’
+ While::print(){
+ ^
+In file included from Parserbase.h:11:0,
+                 from Parser.h:7,
+                 from Parser.ih:6,
+                 from parse.cc:4:
+ast.h:76:7: error: candidate is: virtual void While::print()
+  void print();
+       ^
+In file included from parse.cc:5:0:
+ast.cpp: In member function ‘virtual void If::print()’:
+ast.cpp:105:14: error: ‘pritnf’ was not declared in this scope
+  pritnf("If(");
+              ^
+ast.cpp: In member function ‘void oper2::print()’:
+ast.cpp:132:18: error: cannot pass objects of non-trivially-copyable type ‘std::string {aka class std::basic_string<char>}’ through ‘...’
+  printf("%s ", op);
+                  ^
+ast.cpp:132:18: warning: format ‘%s’ expects argument of type ‘char*’, but argument 2 has type ‘std::string {aka std::basic_string<char>}’ [-Wformat=]
+ast.cpp: In member function ‘void oper1::print()’:
+ast.cpp:147:18: error: cannot pass objects of non-trivially-copyable type ‘std::string {aka class std::basic_string<char>}’ through ‘...’
+  printf("%s ", op);
+                  ^
+ast.cpp:147:18: warning: format ‘%s’ expects argument of type ‘char*’, but argument 2 has type ‘std::string {aka std::basic_string<char>}’ [-Wformat=]
+ast.cpp: In constructor ‘func::func()’:
+ast.cpp:174:23: error: expected primary-expression before ‘l’
+  vec=vector<exp_ast*> l;
+                       ^
+ast.cpp:174:23: error: expected ‘;’ before ‘l’
+ast.cpp: At global scope:
+ast.cpp:177:30: error: declaration of ‘func::func(std::vector<exp_ast*>)’ outside of class is not definition [-fpermissive]
+ func::func(vector<exp_ast*> l);
+                              ^
+ast.cpp:178:2: error: ‘vec’ does not name a type
+  vec=l;
+  ^
+ast.cpp:179:1: error: expected declaration before ‘}’ token
+ };
+ ^
+make: *** [all] Error 1
