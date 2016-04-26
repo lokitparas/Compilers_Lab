@@ -1,0 +1,35 @@
+offset of local var +4   //done
+struct storing as parameter     //done
+floats handling         //done
+struct size greater than reg num        //done
+struct=struct                       //done
+
+//mostly working
+syscall
+array parameter passing
+sethi ullman (in array_ref?)
+
+
+
+//not working
+struct data member float : copy using swc1
+start symbol
+++
+random statement if only return 
+multiple return
+
+
+
+Maybe we not have done c.eq.s etc. :
+For treating types as booleans (like when using the || operator), you can just compare it with 0 in a normal register (except when a float value is -0.0). A value is false if all its bits are zero. The type doesn’t matter.
+
+Kya machaya !!!
+
+
+1. if(float a)
+
+
+int a=5;
+	int *x=&a;
+	*x=*x+1;
+	cout<<a<<endl;

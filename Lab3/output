@@ -1,0 +1,244 @@
+
+main.o:     file format elf64-x86-64
+
+Contents of section .text:
+ 0000 554889e5 8b050000 000083c0 01890500  UH..............
+ 0010 0000005d c3554889 e5b80000 0000e800  ...].UH.........
+ 0020 000000b8 00000000 e8000000 008b0500  ................
+ 0030 00000089 c6bf0000 0000b800 000000e8  ................
+ 0040 00000000 b8000000 005dc3             .........].     
+Contents of section .data:
+ 0000 17000000 38000000                    ....8...        
+Contents of section .rodata:
+ 0000 6275665b 305d203d 20256400           buf[0] = %d.    
+Contents of section .comment:
+ 0000 00474343 3a202855 62756e74 7520342e  .GCC: (Ubuntu 4.
+ 0010 382e342d 32756275 6e747531 7e31342e  8.4-2ubuntu1~14.
+ 0020 30342920 342e382e 3400               04) 4.8.4.      
+Contents of section .eh_frame:
+ 0000 14000000 00000000 017a5200 01781001  .........zR..x..
+ 0010 1b0c0708 90010000 1c000000 1c000000  ................
+ 0020 00000000 15000000 00410e10 8602430d  .........A....C.
+ 0030 06500c07 08000000 1c000000 3c000000  .P..........<...
+ 0040 00000000 36000000 00410e10 8602430d  ....6....A....C.
+ 0050 06710c07 08000000                    .q......        
+
+Disassembly of section .text:
+
+0000000000000000 <foo>:
+   0:	55                   	push   %rbp
+   1:	48 89 e5             	mov    %rsp,%rbp
+   4:	8b 05 00 00 00 00    	mov    0x0(%rip),%eax        # a <foo+0xa>
+			6: R_X86_64_PC32	buf
+   a:	83 c0 01             	add    $0x1,%eax
+   d:	89 05 00 00 00 00    	mov    %eax,0x0(%rip)        # 13 <foo+0x13>
+			f: R_X86_64_PC32	buf-0x4
+  13:	5d                   	pop    %rbp
+  14:	c3                   	retq   
+
+0000000000000015 <main>:
+  15:	55                   	push   %rbp
+  16:	48 89 e5             	mov    %rsp,%rbp
+  19:	b8 00 00 00 00       	mov    $0x0,%eax
+  1e:	e8 00 00 00 00       	callq  23 <main+0xe>
+			1f: R_X86_64_PC32	foo-0x4
+  23:	b8 00 00 00 00       	mov    $0x0,%eax
+  28:	e8 00 00 00 00       	callq  2d <main+0x18>
+			29: R_X86_64_PC32	swap-0x4
+  2d:	8b 05 00 00 00 00    	mov    0x0(%rip),%eax        # 33 <main+0x1e>
+			2f: R_X86_64_PC32	buf-0x4
+  33:	89 c6                	mov    %eax,%esi
+  35:	bf 00 00 00 00       	mov    $0x0,%edi
+			36: R_X86_64_32	.rodata
+  3a:	b8 00 00 00 00       	mov    $0x0,%eax
+  3f:	e8 00 00 00 00       	callq  44 <main+0x2f>
+			40: R_X86_64_PC32	printf-0x4
+  44:	b8 00 00 00 00       	mov    $0x0,%eax
+  49:	5d                   	pop    %rbp
+  4a:	c3                   	retq   
+
+Disassembly of section .data:
+
+0000000000000000 <buf>:
+   0:	17                   	(bad)  
+   1:	00 00                	add    %al,(%rax)
+   3:	00 38                	add    %bh,(%rax)
+   5:	00 00                	add    %al,(%rax)
+	...
+
+Disassembly of section .rodata:
+
+0000000000000000 <.rodata>:
+   0:	62                   	(bad)  
+   1:	75 66                	jne    69 <main+0x54>
+   3:	5b                   	pop    %rbx
+   4:	30 5d 20             	xor    %bl,0x20(%rbp)
+   7:	3d 20 25 64 00       	cmp    $0x642520,%eax
+
+Disassembly of section .comment:
+
+0000000000000000 <.comment>:
+   0:	00 47 43             	add    %al,0x43(%rdi)
+   3:	43 3a 20             	rex.XB cmp (%r8),%spl
+   6:	28 55 62             	sub    %dl,0x62(%rbp)
+   9:	75 6e                	jne    79 <main+0x64>
+   b:	74 75                	je     82 <main+0x6d>
+   d:	20 34 2e             	and    %dh,(%rsi,%rbp,1)
+  10:	38 2e                	cmp    %ch,(%rsi)
+  12:	34 2d                	xor    $0x2d,%al
+  14:	32 75 62             	xor    0x62(%rbp),%dh
+  17:	75 6e                	jne    87 <main+0x72>
+  19:	74 75                	je     90 <main+0x7b>
+  1b:	31 7e 31             	xor    %edi,0x31(%rsi)
+  1e:	34 2e                	xor    $0x2e,%al
+  20:	30 34 29             	xor    %dh,(%rcx,%rbp,1)
+  23:	20 34 2e             	and    %dh,(%rsi,%rbp,1)
+  26:	38 2e                	cmp    %ch,(%rsi)
+  28:	34 00                	xor    $0x0,%al
+
+Disassembly of section .eh_frame:
+
+0000000000000000 <.eh_frame>:
+   0:	14 00                	adc    $0x0,%al
+   2:	00 00                	add    %al,(%rax)
+   4:	00 00                	add    %al,(%rax)
+   6:	00 00                	add    %al,(%rax)
+   8:	01 7a 52             	add    %edi,0x52(%rdx)
+   b:	00 01                	add    %al,(%rcx)
+   d:	78 10                	js     1f <.eh_frame+0x1f>
+   f:	01 1b                	add    %ebx,(%rbx)
+  11:	0c 07                	or     $0x7,%al
+  13:	08 90 01 00 00 1c    	or     %dl,0x1c000001(%rax)
+  19:	00 00                	add    %al,(%rax)
+  1b:	00 1c 00             	add    %bl,(%rax,%rax,1)
+  1e:	00 00                	add    %al,(%rax)
+  20:	00 00                	add    %al,(%rax)
+			20: R_X86_64_PC32	.text
+  22:	00 00                	add    %al,(%rax)
+  24:	15 00 00 00 00       	adc    $0x0,%eax
+  29:	41 0e                	rex.B (bad) 
+  2b:	10 86 02 43 0d 06    	adc    %al,0x60d4302(%rsi)
+  31:	50                   	push   %rax
+  32:	0c 07                	or     $0x7,%al
+  34:	08 00                	or     %al,(%rax)
+  36:	00 00                	add    %al,(%rax)
+  38:	1c 00                	sbb    $0x0,%al
+  3a:	00 00                	add    %al,(%rax)
+  3c:	3c 00                	cmp    $0x0,%al
+  3e:	00 00                	add    %al,(%rax)
+  40:	00 00                	add    %al,(%rax)
+			40: R_X86_64_PC32	.text+0x15
+  42:	00 00                	add    %al,(%rax)
+  44:	36 00 00             	add    %al,%ss:(%rax)
+  47:	00 00                	add    %al,(%rax)
+  49:	41 0e                	rex.B (bad) 
+  4b:	10 86 02 43 0d 06    	adc    %al,0x60d4302(%rsi)
+  51:	71 0c                	jno    5f <main+0x4a>
+  53:	07                   	(bad)  
+  54:	08 00                	or     %al,(%rax)
+	...
+
+swap.o:     file format elf64-x86-64
+
+Contents of section .text:
+ 0000 554889e5 48c70500 00000000 00000048  UH..H..........H
+ 0010 8b050000 00008b00 8945fc48 8b050000  .........E.H....
+ 0020 0000488b 15000000 008b1289 10488b05  ..H..........H..
+ 0030 00000000 8b55fc89 105dc3             .....U...].     
+Contents of section .data:
+ 0000 00000000 00000000                    ........        
+Contents of section .comment:
+ 0000 00474343 3a202855 62756e74 7520342e  .GCC: (Ubuntu 4.
+ 0010 382e342d 32756275 6e747531 7e31342e  8.4-2ubuntu1~14.
+ 0020 30342920 342e382e 3400               04) 4.8.4.      
+Contents of section .eh_frame:
+ 0000 14000000 00000000 017a5200 01781001  .........zR..x..
+ 0010 1b0c0708 90010000 1c000000 1c000000  ................
+ 0020 00000000 3b000000 00410e10 8602430d  ....;....A....C.
+ 0030 06760c07 08000000                    .v......        
+
+Disassembly of section .text:
+
+0000000000000000 <swap>:
+   0:	55                   	push   %rbp
+   1:	48 89 e5             	mov    %rsp,%rbp
+   4:	48 c7 05 00 00 00 00 	movq   $0x0,0x0(%rip)        # f <swap+0xf>
+   b:	00 00 00 00 
+			7: R_X86_64_PC32	.bss-0x8
+			b: R_X86_64_32S	buf+0x4
+   f:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 16 <swap+0x16>
+			12: R_X86_64_PC32	bufp0-0x4
+  16:	8b 00                	mov    (%rax),%eax
+  18:	89 45 fc             	mov    %eax,-0x4(%rbp)
+  1b:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 22 <swap+0x22>
+			1e: R_X86_64_PC32	bufp0-0x4
+  22:	48 8b 15 00 00 00 00 	mov    0x0(%rip),%rdx        # 29 <swap+0x29>
+			25: R_X86_64_PC32	.bss-0x4
+  29:	8b 12                	mov    (%rdx),%edx
+  2b:	89 10                	mov    %edx,(%rax)
+  2d:	48 8b 05 00 00 00 00 	mov    0x0(%rip),%rax        # 34 <swap+0x34>
+			30: R_X86_64_PC32	.bss-0x4
+  34:	8b 55 fc             	mov    -0x4(%rbp),%edx
+  37:	89 10                	mov    %edx,(%rax)
+  39:	5d                   	pop    %rbp
+  3a:	c3                   	retq   
+
+Disassembly of section .data:
+
+0000000000000000 <bufp0>:
+	...
+			0: R_X86_64_64	buf
+
+Disassembly of section .bss:
+
+0000000000000000 <bufp1>:
+	...
+
+Disassembly of section .comment:
+
+0000000000000000 <.comment>:
+   0:	00 47 43             	add    %al,0x43(%rdi)
+   3:	43 3a 20             	rex.XB cmp (%r8),%spl
+   6:	28 55 62             	sub    %dl,0x62(%rbp)
+   9:	75 6e                	jne    79 <swap+0x79>
+   b:	74 75                	je     82 <swap+0x82>
+   d:	20 34 2e             	and    %dh,(%rsi,%rbp,1)
+  10:	38 2e                	cmp    %ch,(%rsi)
+  12:	34 2d                	xor    $0x2d,%al
+  14:	32 75 62             	xor    0x62(%rbp),%dh
+  17:	75 6e                	jne    87 <swap+0x87>
+  19:	74 75                	je     90 <swap+0x90>
+  1b:	31 7e 31             	xor    %edi,0x31(%rsi)
+  1e:	34 2e                	xor    $0x2e,%al
+  20:	30 34 29             	xor    %dh,(%rcx,%rbp,1)
+  23:	20 34 2e             	and    %dh,(%rsi,%rbp,1)
+  26:	38 2e                	cmp    %ch,(%rsi)
+  28:	34 00                	xor    $0x0,%al
+
+Disassembly of section .eh_frame:
+
+0000000000000000 <.eh_frame>:
+   0:	14 00                	adc    $0x0,%al
+   2:	00 00                	add    %al,(%rax)
+   4:	00 00                	add    %al,(%rax)
+   6:	00 00                	add    %al,(%rax)
+   8:	01 7a 52             	add    %edi,0x52(%rdx)
+   b:	00 01                	add    %al,(%rcx)
+   d:	78 10                	js     1f <.eh_frame+0x1f>
+   f:	01 1b                	add    %ebx,(%rbx)
+  11:	0c 07                	or     $0x7,%al
+  13:	08 90 01 00 00 1c    	or     %dl,0x1c000001(%rax)
+  19:	00 00                	add    %al,(%rax)
+  1b:	00 1c 00             	add    %bl,(%rax,%rax,1)
+  1e:	00 00                	add    %al,(%rax)
+  20:	00 00                	add    %al,(%rax)
+			20: R_X86_64_PC32	.text
+  22:	00 00                	add    %al,(%rax)
+  24:	3b 00                	cmp    (%rax),%eax
+  26:	00 00                	add    %al,(%rax)
+  28:	00 41 0e             	add    %al,0xe(%rcx)
+  2b:	10 86 02 43 0d 06    	adc    %al,0x60d4302(%rsi)
+  31:	76 0c                	jbe    3f <swap+0x3f>
+  33:	07                   	(bad)  
+  34:	08 00                	or     %al,(%rax)
+	...

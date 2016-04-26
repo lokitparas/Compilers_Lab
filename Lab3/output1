@@ -1,0 +1,68 @@
+
+testing.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <main>:
+   0:	55                   	push   %rbp
+   1:	48 89 e5             	mov    %rsp,%rbp
+   4:	c7 05 00 00 00 00 04 	movl   $0x4,0x0(%rip)        # e <main+0xe>
+   b:	00 00 00 
+			6: R_X86_64_PC32	.bss-0x8
+   e:	5d                   	pop    %rbp
+   f:	c3                   	retq   
+
+Disassembly of section .bss:
+
+0000000000000000 <b.2179>:
+   0:	00 00                	add    %al,(%rax)
+	...
+
+Disassembly of section .comment:
+
+0000000000000000 <.comment>:
+   0:	00 47 43             	add    %al,0x43(%rdi)
+   3:	43 3a 20             	rex.XB cmp (%r8),%spl
+   6:	28 55 62             	sub    %dl,0x62(%rbp)
+   9:	75 6e                	jne    79 <main+0x79>
+   b:	74 75                	je     82 <main+0x82>
+   d:	20 34 2e             	and    %dh,(%rsi,%rbp,1)
+  10:	38 2e                	cmp    %ch,(%rsi)
+  12:	34 2d                	xor    $0x2d,%al
+  14:	32 75 62             	xor    0x62(%rbp),%dh
+  17:	75 6e                	jne    87 <main+0x87>
+  19:	74 75                	je     90 <main+0x90>
+  1b:	31 7e 31             	xor    %edi,0x31(%rsi)
+  1e:	34 2e                	xor    $0x2e,%al
+  20:	30 34 29             	xor    %dh,(%rcx,%rbp,1)
+  23:	20 34 2e             	and    %dh,(%rsi,%rbp,1)
+  26:	38 2e                	cmp    %ch,(%rsi)
+  28:	34 00                	xor    $0x0,%al
+
+Disassembly of section .eh_frame:
+
+0000000000000010 <.eh_frame>:
+  10:	14 00                	adc    $0x0,%al
+  12:	00 00                	add    %al,(%rax)
+  14:	00 00                	add    %al,(%rax)
+  16:	00 00                	add    %al,(%rax)
+  18:	01 7a 52             	add    %edi,0x52(%rdx)
+  1b:	00 01                	add    %al,(%rcx)
+  1d:	78 10                	js     2f <.eh_frame+0x1f>
+  1f:	01 1b                	add    %ebx,(%rbx)
+  21:	0c 07                	or     $0x7,%al
+  23:	08 90 01 00 00 1c    	or     %dl,0x1c000001(%rax)
+  29:	00 00                	add    %al,(%rax)
+  2b:	00 1c 00             	add    %bl,(%rax,%rax,1)
+  2e:	00 00                	add    %al,(%rax)
+  30:	00 00                	add    %al,(%rax)
+			30: R_X86_64_PC32	.text
+  32:	00 00                	add    %al,(%rax)
+  34:	10 00                	adc    %al,(%rax)
+  36:	00 00                	add    %al,(%rax)
+  38:	00 41 0e             	add    %al,0xe(%rcx)
+  3b:	10 86 02 43 0d 06    	adc    %al,0x60d4302(%rsi)
+  41:	4b 0c 07             	rex.WXB or $0x7,%al
+  44:	08 00                	or     %al,(%rax)
+	...
